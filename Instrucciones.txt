@@ -1,9 +1,0 @@
-Sistema de Control Clínico Veterinario
-
-Elaborar el análisis del sistema, incluir todos los casos de uso, todos los diagramas de flujo, el diagrama de clases y el código del proyecto en C#, entregables:
-
-Diagramas de casos de uso y flujo, entregable en draw.io
-Diagrama de clases, entregable en bluej
-Código elaborado en VSC o VS o IDE compatible
-Entrega enlace en github con todas las carpetas correspondientes
-Video explicando la funcionalidad del código
