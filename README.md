@@ -20,6 +20,4 @@ Proyecto de diseno y desarrollo de un sistema de control clinico veterinario: di
 5. **Generar Metricas**: el administrador obtiene indicadores de tickets por estado, por prioridad, tickets escalados y carga por veterinario.
 6. **Consultar Historial Clinico**: el cliente o el veterinario buscan un ticket por numero y revisan el historial completo de eventos registrados.
 
-## Autor
 
-RodCas98
