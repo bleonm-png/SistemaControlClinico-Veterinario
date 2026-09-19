@@ -1,0 +1,84 @@
+<mxfile host="app.diagrams.net" modified="2026-09-18T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="cu-general-vet" name="Caso de Uso General">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="boundary" value="Sistema de Control Clinico Veterinario" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="680" height="600" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act_cliente" value="Cliente" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="30" y="140" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_vet" value="Veterinario" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_gestor" value="Gestor de Consultas&#10;(sistema)" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="900" y="200" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="act_admin" value="Administrador" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="900" y="480" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_crear" value="Crear Ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_asignar" value="Asignar Ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="430" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_ver" value="Ver tickets" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="200" y="170" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_resolver" value="Resolver Ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="430" y="260" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_hallazgo" value="Registrar hallazgo&#10;en ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="200" y="260" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_cerrar" value="Cerrar ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="660" y="260" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_escalar" value="Escalar Ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="430" y="350" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_bitacora" value="Consultar Historial&#10;Clinico (Bitacora)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="200" y="440" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc_metricas" value="Generar Metricas" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="660" y="440" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ex_sinvet" value="Sin veterinario disponible" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="620" y="80" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ex_reabrir" value="Reabrir ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="430" y="530" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l1" style="html=1;endArrow=none;" edge="1" parent="1" source="act_cliente" target="uc_crear"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l2" style="html=1;endArrow=none;" edge="1" parent="1" source="act_cliente" target="uc_ver"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l3" style="html=1;endArrow=none;" edge="1" parent="1" source="act_cliente" target="uc_bitacora"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l4" style="html=1;endArrow=none;" edge="1" parent="1" source="act_vet" target="uc_resolver"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l5" style="html=1;endArrow=none;" edge="1" parent="1" source="act_vet" target="uc_escalar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l6" style="html=1;endArrow=none;" edge="1" parent="1" source="act_vet" target="uc_hallazgo"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l7" style="html=1;endArrow=none;" edge="1" parent="1" source="act_vet" target="uc_bitacora"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l8" style="html=1;endArrow=none;" edge="1" parent="1" source="act_gestor" target="uc_asignar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l9" style="html=1;endArrow=none;" edge="1" parent="1" source="act_gestor" target="uc_cerrar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="l10" style="html=1;endArrow=none;" edge="1" parent="1" source="act_admin" target="uc_metricas"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="inc1" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_crear" target="uc_asignar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc2" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_escalar" target="uc_asignar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc3" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_resolver" target="uc_hallazgo"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc4" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_resolver" target="uc_cerrar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc5" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_crear" target="uc_bitacora"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc6" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_resolver" target="uc_bitacora"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc7" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_escalar" target="uc_bitacora"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="ext1" value="&amp;laquo;extend&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="ex_sinvet" target="uc_asignar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ext2" value="&amp;laquo;extend&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="ex_reabrir" target="uc_resolver"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" modified="2026-09-18T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="clases-clinica-vet" name="Diagrama de Clases Sistema Clinico Veterinario">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="persona" value="&lt;b&gt;&amp;laquo;abstract&amp;raquo;&lt;br&gt;Persona&lt;/b&gt;&lt;hr&gt;- strId: string&lt;br&gt;- strNombre: string&lt;br&gt;- strCorreo: string&lt;br&gt;- blnActivo: bool&lt;hr&gt;+ obtenerRol(): string {abstract}&lt;br&gt;+ mostrarInformacion(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="240" height="140" as="geometry" />
+        </mxCell>
+
+        <mxCell id="cliente" value="&lt;b&gt;Cliente&lt;/b&gt;&lt;hr&gt;- strTelefono: string&lt;br&gt;- strDireccion: string&lt;br&gt;- lstMascotas: List&amp;lt;Mascota&amp;gt;&lt;hr&gt;+ obtenerRol(): string&lt;br&gt;+ mostrarInformacion(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="260" width="240" height="120" as="geometry" />
+        </mxCell>
+
+        <mxCell id="veterinario" value="&lt;b&gt;Veterinario&lt;/b&gt;&lt;hr&gt;- strEspecialidad: string&lt;br&gt;- intNivelExperiencia: int&lt;br&gt;- intCargaActual: int&lt;br&gt;- intCapacidadMaxima: int&lt;hr&gt;+ estaDisponible(): bool&lt;br&gt;+ puedeAtender(tipo): bool&lt;br&gt;+ aumentarCarga(): void&lt;br&gt;+ liberarCarga(): void&lt;br&gt;+ obtenerRol(): string&lt;br&gt;+ mostrarInformacion(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="260" width="260" height="180" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mascota" value="&lt;b&gt;Mascota&lt;/b&gt;&lt;hr&gt;- strId: string&lt;br&gt;- strNombre: string&lt;br&gt;- strEspecie: string&lt;br&gt;- strRaza: string&lt;br&gt;- intEdad: int&lt;br&gt;- objDueno: Cliente&lt;hr&gt;+ mostrarInformacion(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="460" width="240" height="150" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ticket" value="&lt;b&gt;Ticket&lt;/b&gt;&lt;hr&gt;- intNumero: int&lt;br&gt;- strMotivo: string&lt;br&gt;- strSintomas: string&lt;br&gt;- strTipoConsulta: string&lt;br&gt;- strPrioridad: string&lt;br&gt;- strEstado: string&lt;br&gt;- dtFechaCreacion: DateTime&lt;br&gt;- strDiagnostico: string&lt;br&gt;- strTratamiento: string&lt;br&gt;- blnEscalado: bool&lt;br&gt;- objMascota: Mascota&lt;br&gt;- objVeterinarioAsignado: Veterinario&lt;br&gt;- objBitacora: Bitacora&lt;hr&gt;+ asignar(v: Veterinario): void&lt;br&gt;+ registrarHallazgo(tipo, desc, gravedad): void&lt;br&gt;+ resolver(diagnostico, tratamiento): void&lt;br&gt;+ cerrar(): void&lt;br&gt;+ escalar(motivo, senior): void&lt;br&gt;+ mostrarResumen(): void&lt;br&gt;+ mostrarBitacora(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="600" y="460" width="280" height="330" as="geometry" />
+        </mxCell>
+
+        <mxCell id="bitacora" value="&lt;b&gt;Bitacora&lt;/b&gt;&lt;hr&gt;- lstRegistros: List&amp;lt;string&amp;gt;&lt;hr&gt;+ registrarEvento(evento): void&lt;br&gt;+ mostrarBitacora(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="460" width="220" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="flujo" value="&lt;b&gt;FlujoTicket&lt;/b&gt;&lt;hr&gt;- dicTransiciones: Dictionary&amp;lt;string, List&amp;lt;string&amp;gt;&amp;gt;&lt;hr&gt;+ puedeCambiarEstado(actual, nuevo): bool&lt;br&gt;+ mostrarFlujo(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="620" width="240" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="gestor" value="&lt;b&gt;GestorClinica&lt;/b&gt;&lt;hr&gt;- lstVeterinarios: List&amp;lt;Veterinario&amp;gt;&lt;br&gt;- lstClientes: List&amp;lt;Cliente&amp;gt;&lt;br&gt;- lstMascotas: List&amp;lt;Mascota&amp;gt;&lt;br&gt;- lstTickets: List&amp;lt;Ticket&amp;gt;&lt;br&gt;- objFlujo: FlujoTicket&lt;br&gt;- intSiguienteNumero: int&lt;hr&gt;+ crearTicket(...): Ticket&lt;br&gt;+ asignarTicket(numero): Ticket&lt;br&gt;+ asignarTicket(numero, idVet): Ticket&lt;br&gt;+ registrarHallazgo(...): Ticket&lt;br&gt;+ escalarTicket(numero, motivo): Ticket&lt;br&gt;+ resolverTicket(numero, diag, trat): Ticket&lt;br&gt;+ cerrarTicket(numero): Ticket&lt;br&gt;- asignarVeterinarioAutomatico(tipo): Veterinario&lt;br&gt;+ buscarTicket(numero): Ticket&lt;br&gt;+ mostrarTickets(): void&lt;br&gt;+ mostrarFlujo(): void&lt;br&gt;+ generarMetricas(): void" style="html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=6;spacingTop=4;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="300" height="330" as="geometry" />
+        </mxCell>
+
+        <!-- Herencia: Cliente y Veterinario extienden Persona -->
+        <mxCell id="rel1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;" edge="1" parent="1" source="cliente" target="persona">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;" edge="1" parent="1" source="veterinario" target="persona">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Asociacion: Mascota - Cliente (0..* : 1) -->
+        <mxCell id="rel3" value="0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="mascota" target="cliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Asociacion: Ticket - Mascota (0..* : 1) -->
+        <mxCell id="rel4" value="0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="ticket" target="mascota">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Asociacion: Ticket - Veterinario (0..* : 0..1) -->
+        <mxCell id="rel5" value="0..*         0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="ticket" target="veterinario">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Composicion: Ticket compone Bitacora (1) -->
+        <mxCell id="rel6" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;startArrow=diamondThin;startFill=1;endArrow=none;" edge="1" parent="1" source="ticket" target="bitacora">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GestorClinica administra Veterinario, Cliente, Mascota y Ticket (1 : 0..*) -->
+        <mxCell id="rel7" value="1        0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="gestor" target="veterinario">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel8" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="gestor" target="cliente">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel9" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="gestor" target="mascota">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel10" value="1     0..*" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;endFill=1;startArrow=none;" edge="1" parent="1" source="gestor" target="ticket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Dependencia: GestorClinica usa FlujoTicket para validar transiciones -->
+        <mxCell id="rel11" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;startArrow=none;" edge="1" parent="1" source="gestor" target="flujo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

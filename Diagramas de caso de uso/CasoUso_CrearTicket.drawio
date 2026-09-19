@@ -1,0 +1,49 @@
+<mxfile host="app.diagrams.net" modified="2026-09-18T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram id="cu-crear-ticket" name="Caso de Uso - Crear Ticket">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="520" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="boundary" value="Crear Ticket" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="600" height="380" as="geometry" />
+        </mxCell>
+
+        <mxCell id="act_cliente" value="Cliente" style="shape=actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="40" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_crear" value="Crear Ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="220" y="170" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_datos" value="Seleccionar mascota e ingresar&#10;motivo, sintomas, tipo de&#10;consulta y prioridad" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="200" y="60" width="200" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_numerar" value="Asignar numero&#10;consecutivo" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="220" y="270" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_registrar" value="Registrar creacion&#10;en bitacora" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="220" y="350" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_asignar" value="Asignar Ticket" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="500" y="170" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="ex_fuera" value="Notificar seleccion&#10;fuera de rango" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="440" y="60" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="l1" style="html=1;endArrow=none;" edge="1" parent="1" source="act_cliente" target="uc_crear"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s1" style="html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="uc_crear" target="uc_datos"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s2" style="html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="uc_crear" target="uc_numerar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="s3" style="html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="uc_numerar" target="uc_registrar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="inc1" value="&amp;laquo;include&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="uc_crear" target="uc_asignar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="ext1" value="&amp;laquo;extend&amp;raquo;" style="html=1;dashed=1;endArrow=classic;fontSize=10;" edge="1" parent="1" source="ex_fuera" target="uc_datos"><mxGeometry relative="1" as="geometry" /></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
